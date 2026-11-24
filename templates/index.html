@@ -1,0 +1,966 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CryptoLab | Cryptography Learning</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">🔐</span>
+            <h2>Crypto<span>Lab</span></h2>
+        </div>
+
+        <div class="course-info">
+            <p>YOUR LEARNING JOURNEY</p>
+            <h3>Cryptography Course</h3>
+            <span>12 Learning Topics</span>
+        </div>
+
+        <p class="menu-heading">LEARNING TOPICS</p>
+
+        <nav class="topic-sidebar">
+
+            <button class="topic-btn active" data-topic="fundamentals">
+                <span>01</span> Cryptography Fundamentals
+            </button>
+
+            <button class="topic-btn" data-topic="encoding">
+                <span>02</span> Encoding & Hashing
+            </button>
+
+            <button class="topic-btn" data-topic="caesar">
+                <span>03</span> Caesar Cipher
+            </button>
+
+            <button class="topic-btn" data-topic="symmetric">
+                <span>04</span> Symmetric Encryption
+            </button>
+
+            <button class="topic-btn" data-topic="asymmetric">
+                <span>05</span> Asymmetric Encryption
+            </button>
+
+            <button class="topic-btn" data-topic="hybrid">
+                <span>06</span> Hybrid Cryptography
+            </button>
+
+            <button class="topic-btn" data-topic="sha256">
+                <span>07</span> SHA-256
+            </button>
+
+            <button class="topic-btn" data-topic="salting">
+                <span>08</span> Password Salting
+            </button>
+
+            <button class="topic-btn" data-topic="hmac">
+                <span>09</span> HMAC
+            </button>
+
+            <button class="topic-btn" data-topic="signature">
+                <span>10</span> Digital Signatures
+            </button>
+
+            <button class="topic-btn" data-topic="pki">
+                <span>11</span> PKI & Certificates
+            </button>
+
+            <button class="topic-btn" data-topic="selection">
+                <span>12</span> QUIZ
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>🔒</span>
+            <div>
+                <strong>Keep Learning</strong>
+                <p>Build your cryptography skills</p>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div>
+                <p class="small-heading">CYBERSECURITY LEARNING PLATFORM</p>
+                <h2>Student Dashboard</h2>
+            </div>
+
+            <div class="student-profile">
+                <span class="profile-icon">👩‍💻</span>
+                <div>
+                    <strong>Student</strong>
+                    <p>Cryptography Learner</p>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Learning Topics -->
+        <section class="topic-content" id="topicContent">
+
+            <p class="small-heading">TOPIC 01</p>
+
+            <h2>Cryptography Fundamentals</h2>
+
+            <p>
+                Cryptography is the process of protecting information
+                by converting it into a form that unauthorized people
+                cannot understand.
+            </p>
+
+            <h3>Important Terms</h3>
+
+            <ul>
+                <li><strong>Plaintext:</strong> Original readable message.</li>
+                <li><strong>Ciphertext:</strong> Encrypted, unreadable message.</li>
+                <li><strong>Key:</strong> A value used for encryption or decryption.</li>
+                <li><strong>Algorithm:</strong> The method used for encryption or decryption.</li>
+                <li><strong>Cryptanalysis:</strong> The study of analyzing or breaking cryptographic protection.</li>
+            </ul>
+
+            <h3>Simple Example</h3>
+
+            <p>
+                Imagine sending a private message to your friend.
+                Cryptography helps protect the message from unauthorized people.
+            </p>
+
+        </section>
+
+        <!-- Topic 02 Practical Laboratory Template -->
+        <template id="encodingPractical">
+
+            <div class="practical-heading">
+                <h2>Practical Laboratory</h2>
+                <p>Apply what you've learned using these interactive cryptography tools.</p>
+            </div>
+
+            <div class="practical-box">
+
+                <h3>1. Base64 Encoder & Decoder</h3>
+
+                <label for="base64Input">Enter Your Message</label>
+                <textarea id="base64Input" placeholder="Type your message..."></textarea>
+
+                <div class="cipher-buttons">
+                    <button id="base64EncodeBtn" type="button">Encode</button>
+                    <button id="base64DecodeBtn" type="button">Decode</button>
+                </div>
+
+                <label for="base64Output">Result</label>
+                <textarea id="base64Output" readonly></textarea>
+                <p id="base64Status"></p>
+
+            </div>
+
+            <div class="practical-box">
+
+                <h3>2. AES Encryption & Decryption</h3>
+
+                <label for="aesInput">Enter Your Message</label>
+                <textarea id="aesInput" placeholder="Type your message..."></textarea>
+
+                <label for="aesPassword">Secret Password</label>
+                <input type="password" id="aesPassword" placeholder="Enter password">
+
+                <div class="cipher-buttons">
+                    <button id="aesEncryptBtn" type="button">Encrypt</button>
+                    <button id="aesDecryptBtn" type="button">Decrypt</button>
+                </div>
+
+                <label for="aesOutput">Result</label>
+                <textarea id="aesOutput" readonly></textarea>
+                <p id="aesStatus"></p>
+
+            </div>
+
+            <div class="practical-box">
+
+                <h3>3. SHA-256 Hash Generator</h3>
+
+                <label for="hashInput">Enter Your Message</label>
+                <textarea id="hashInput" placeholder="Type your message..."></textarea>
+
+                <button id="hashGenerateBtn" type="button">
+                    Generate SHA-256 Hash
+                </button>
+
+                <label for="hashOutput">Hash Result</label>
+                <textarea id="hashOutput" readonly></textarea>
+                <p id="hashStatus"></p>
+
+            </div>
+
+        </template>
+
+        <!-- Topic 04: Symmetric Encryption Practical Template -->
+        <template id="symmetricPractical">
+
+            <div class="practical-heading">
+                <h2>Practical Laboratory</h2>
+                <p>Explore symmetric encryption by encrypting and decrypting a message using AES.</p>
+            </div>
+
+            <div class="practical-box">
+
+                <h3>1. AES Encryption & Decryption</h3>
+
+                <p>
+                    AES uses the same secret key for encryption and decryption.
+                    Try it below.
+                </p>
+
+                <label for="aesInput">Enter Your Message</label>
+                <textarea id="aesInput"
+                          placeholder="Type your message..."></textarea>
+
+                <label for="aesPassword">Secret Password</label>
+                <input type="password"
+                       id="aesPassword"
+                       placeholder="Enter your secret password">
+
+                <div class="cipher-buttons">
+                    <button id="aesEncryptBtn" type="button">
+                        Encrypt
+                    </button>
+
+                    <button id="aesDecryptBtn" type="button">
+                        Decrypt
+                    </button>
+                </div>
+
+                <label for="aesOutput">Result</label>
+                <textarea id="aesOutput"
+                          placeholder="Your encrypted or decrypted result will appear here..."
+                          readonly></textarea>
+
+                <p id="aesStatus" aria-live="polite"></p>
+
+            </div>
+
+        </template>
+
+        <!-- Topic 05: Asymmetric Encryption Practical Template -->
+        <template id="asymmetricPractical">
+
+            <div class="practical-heading">
+                <h2>Practical Laboratory</h2>
+                <p>Explore asymmetric encryption using RSA public and private keys.</p>
+            </div>
+
+            <div class="practical-box">
+
+                <h3>1. RSA Key Generation</h3>
+
+                <p>
+                    Generate a pair of RSA keys. The public key encrypts the message,
+                    while the private key decrypts it.
+                </p>
+
+                <button id="rsaGenerateBtn" type="button">
+                    Generate RSA Keys
+                </button>
+
+                <p id="rsaKeyStatus" aria-live="polite"></p>
+
+                <button id="rsaClearBtn" class="clear-button" type="button">
+                    Clear All
+                </button>
+
+                <h3>2. Message Encryption</h3>
+
+                <label for="rsaInput">Enter Your Message</label>
+
+                <textarea
+                    id="rsaInput"
+                    placeholder="Type a short message..."
+                    rows="4"
+                ></textarea>
+
+                <button id="rsaEncryptBtn" type="button">
+                    Encrypt with Public Key
+                </button>
+
+                <h3>3. Encrypted Message</h3>
+
+                <label for="rsaOutput">Ciphertext</label>
+
+                <textarea
+                    id="rsaOutput"
+                    placeholder="Encrypted message will appear here..."
+                    rows="5"
+                    readonly
+                ></textarea>
+
+                <button id="rsaDecryptBtn" type="button">
+                    Decrypt with Private Key
+                </button>
+
+                <h3>4. Decrypted Message</h3>
+
+                <label for="rsaDecryptedOutput">Original Message</label>
+
+                <textarea
+                    id="rsaDecryptedOutput"
+                    placeholder="Decrypted message will appear here..."
+                    rows="4"
+                    readonly
+                ></textarea>
+
+                <p id="rsaStatus" aria-live="polite"></p>
+
+            </div>
+
+        </template>
+
+<!-- ========================================== -->
+<!-- TOPIC 06 - HYBRID CRYPTOGRAPHY PRACTICAL -->
+<!-- ========================================== -->
+
+<template id="hybridPractical">
+
+    <section class="practical-box">
+
+        <h2>Hybrid Encryption Lab</h2>
+
+        <p>
+            Practice hybrid encryption by combining AES and RSA.
+            AES encrypts the message, while RSA encrypts the AES secret key.
+        </p>
+
+        <h3>Step 1: Generate RSA Keys</h3>
+
+        <button type="button" id="hybridGenerateBtn">
+            Generate RSA Keys
+        </button>
+
+        <p id="hybridKeyStatus" class="status-message"></p>
+
+        <h3>Step 2: Enter Your Message</h3>
+
+        <textarea
+            id="hybridInput"
+            placeholder="Enter your message here..."
+            rows="4"
+        ></textarea>
+
+        <h3>Step 3: Encrypt Message</h3>
+
+        <button type="button" id="hybridEncryptBtn">
+            Encrypt Message
+        </button>
+
+        <p id="hybridStatus" class="status-message"></p>
+
+        <h3>AES Encrypted Message (Ciphertext)</h3>
+
+        <textarea
+            id="hybridCiphertext"
+            rows="4"
+            readonly
+            placeholder="Encrypted message will appear here..."
+        ></textarea>
+
+        <h3>RSA Encrypted AES Key</h3>
+
+        <textarea
+            id="hybridEncryptedKey"
+            rows="3"
+            readonly
+            placeholder="Encrypted AES key will appear here..."
+        ></textarea>
+
+        <h3>Step 4: Decrypt Message</h3>
+
+        <button type="button" id="hybridDecryptBtn">
+            Decrypt Message
+        </button>
+
+        <h3>Decrypted Original Message</h3>
+
+        <textarea
+            id="hybridDecryptedOutput"
+            rows="4"
+            readonly
+            placeholder="Decrypted message will appear here..."
+        ></textarea>
+
+        <p id="hybridDecryptStatus" class="status-message"></p>
+
+        <button type="button" id="hybridClearBtn" class="clear-button">
+            Clear All
+        </button>
+
+    </section>
+
+</template>
+
+<!-- ========================================== -->
+<!-- TOPIC 07 - SHA-256 PRACTICAL -->
+<!-- ========================================== -->
+
+<template id="sha256Practical">
+
+    <section class="practical-section">
+
+        <h2>SHA-256 Practical Lab</h2>
+
+        <p>
+            Experiment with SHA-256 hashing. Generate hashes,
+            compare different messages, and observe how a small
+            input change produces a different hash.
+        </p>
+
+        <!-- PRACTICAL 1: HASH GENERATOR -->
+
+        <div class="practical-box">
+
+            <h3>1. SHA-256 Hash Generator</h3>
+
+            <label for="hashInput">Enter Your Message</label>
+
+            <textarea
+                id="hashInput"
+                placeholder="Enter a message..."
+                rows="3"></textarea>
+
+            <button type="button" id="hashGenerateBtn">
+                Generate SHA-256 Hash
+            </button>
+
+            <label for="hashOutput">Generated Hash</label>
+
+            <textarea
+                id="hashOutput"
+                readonly
+                rows="3"
+                placeholder="Your SHA-256 hash will appear here..."></textarea>
+
+            <p id="hashStatus" class="status-message"></p>
+
+        </div>
+
+        <!-- PRACTICAL 2: AVALANCHE EFFECT -->
+
+        <div class="practical-box">
+
+            <h3>2. Observe the Avalanche Effect</h3>
+
+            <p>
+                Enter two similar messages. Even a small change
+                should produce a very different SHA-256 hash.
+            </p>
+
+            <label for="avalancheInput1">First Message</label>
+
+            <input
+                type="text"
+                id="avalancheInput1"
+                placeholder="Example: Hello">
+
+            <label for="avalancheInput2">Second Message</label>
+
+            <input
+                type="text"
+                id="avalancheInput2"
+                placeholder="Example: hello">
+
+            <button type="button" id="compareHashBtn">
+                Compare Hashes
+            </button>
+
+            <label for="avalancheHash1">First Hash</label>
+
+            <textarea
+                id="avalancheHash1"
+                readonly
+                rows="3"></textarea>
+
+            <label for="avalancheHash2">Second Hash</label>
+
+            <textarea
+                id="avalancheHash2"
+                readonly
+                rows="3"></textarea>
+
+            <p id="avalancheStatus" class="status-message"></p>
+
+        </div>
+
+        <!-- PRACTICAL 3: HASH VERIFICATION -->
+
+        <div class="practical-box">
+
+            <h3>3. Hash Verification</h3>
+
+            <p>
+                Check whether two messages produce the same SHA-256 hash.
+            </p>
+
+            <label for="verifyInput1">First Message</label>
+
+            <input
+                type="text"
+                id="verifyInput1"
+                placeholder="Enter first message">
+
+            <label for="verifyInput2">Second Message</label>
+
+            <input
+                type="text"
+                id="verifyInput2"
+                placeholder="Enter second message">
+
+            <button type="button" id="verifyHashBtn">
+                Verify Hashes
+            </button>
+
+            <p id="verifyStatus" class="status-message"></p>
+
+        </div>
+
+    </section>
+
+</template>
+
+<!-- PASSWORD SALTING PRACTICAL -->
+<template id="saltingPractical">
+
+    <div class="practical-box">
+        <h3>1. Generate a Salted Password Hash</h3>
+
+        <p>
+            Enter a password. The system will generate a random salt
+            and use PBKDF2 to create a secure password hash.
+        </p>
+
+        <input
+            type="password"
+            id="saltPassword"
+            placeholder="Enter your password"
+        >
+
+        <button type="button" id="generateSaltHashBtn">
+            Generate Salted Hash
+        </button>
+
+        <p><strong>Generated Salt:</strong></p>
+        <textarea id="generatedSalt" readonly placeholder="Salt will appear here"></textarea>
+
+        <p><strong>Password Hash:</strong></p>
+        <textarea id="saltedHashOutput" readonly placeholder="Hash will appear here"></textarea>
+
+        <p id="saltGenerateStatus"></p>
+    </div>
+
+    <div class="practical-box">
+        <h3>2. Verify a Password</h3>
+
+        <p>
+            Enter the password again. The system will check whether
+            it matches the original password using the saved salt.
+        </p>
+
+        <input
+            type="password"
+            id="verifySaltPassword"
+            placeholder="Enter password to verify"
+        >
+
+        <button type="button" id="verifySaltPasswordBtn">
+            Verify Password
+        </button>
+
+        <p id="saltVerifyStatus"></p>
+    </div>
+
+    <div class="practical-box">
+        <h3>3. Compare Different Salts</h3>
+
+        <p>
+            Use the same password twice. The system will generate
+            two different random salts and compare the resulting hashes.
+        </p>
+
+        <input
+            type="password"
+            id="compareSaltPassword"
+            placeholder="Enter the same password"
+        >
+
+        <button type="button" id="compareSaltBtn">
+            Compare Salted Hashes
+        </button>
+
+        <p><strong>Hash 1:</strong></p>
+        <textarea id="compareHash1" readonly></textarea>
+
+        <p><strong>Hash 2:</strong></p>
+        <textarea id="compareHash2" readonly></textarea>
+
+        <p id="compareSaltStatus"></p>
+    </div>
+
+</template>
+
+
+<template id="hmacPractical">
+
+    <div class="practical-box">
+        <h3>1. Generate HMAC-SHA256</h3>
+
+        <p>
+            Enter a message and secret key. The system will generate
+            an HMAC-SHA256 authentication code.
+        </p>
+
+        <input
+            type="text"
+            id="hmacMessage"
+            placeholder="Enter your message"
+        >
+
+        <input
+            type="password"
+            id="hmacSecretKey"
+            placeholder="Enter your secret key"
+        >
+
+        <button type="button" id="generateHmacBtn">
+            Generate HMAC
+        </button>
+
+        <p><strong>Generated HMAC:</strong></p>
+        <textarea
+            id="hmacOutput"
+            readonly
+            placeholder="HMAC will appear here"
+        ></textarea>
+
+        <p id="hmacGenerateStatus"></p>
+    </div>
+
+    <div class="practical-box">
+        <h3>2. Verify HMAC</h3>
+
+        <p>
+            Enter the original message, secret key, and generated HMAC.
+            The system will check whether the HMAC is valid.
+        </p>
+
+        <input
+            type="text"
+            id="verifyHmacMessage"
+            placeholder="Enter message"
+        >
+
+        <input
+            type="password"
+            id="verifyHmacKey"
+            placeholder="Enter secret key"
+        >
+
+        <textarea
+            id="verifyHmacCode"
+            placeholder="Paste generated HMAC here"
+        ></textarea>
+
+        <button type="button" id="verifyHmacBtn">
+            Verify HMAC
+        </button>
+
+        <p id="hmacVerifyStatus"></p>
+    </div>
+
+    <div class="practical-box">
+        <h3>3. Detect Message Tampering</h3>
+
+        <p>
+            First generate an HMAC for a message. Then change the message
+            and verify it again to see whether tampering is detected.
+        </p>
+
+        <input
+            type="text"
+            id="tamperMessage"
+            placeholder="Enter original message"
+        >
+
+        <input
+            type="password"
+            id="tamperKey"
+            placeholder="Enter secret key"
+        >
+
+        <button type="button" id="generateTamperHmacBtn">
+            Generate Original HMAC
+        </button>
+
+        <p><strong>Original HMAC:</strong></p>
+        <textarea
+            id="tamperHmacOutput"
+            readonly
+            placeholder="Original HMAC will appear here"
+        ></textarea>
+
+        <p><strong>Change the message below:</strong></p>
+        <input
+            type="text"
+            id="modifiedMessage"
+            placeholder="Modified message"
+        >
+
+        <button type="button" id="checkTamperBtn">
+            Check Tampering
+        </button>
+
+        <p id="tamperStatus"></p>
+    </div>
+
+</template>
+
+<!-- ====================================== -->
+<!-- TOPIC 10 - DIGITAL SIGNATURE PRACTICAL -->
+<!-- ====================================== -->
+
+<template id="signaturePractical">
+
+    <div class="practical-box">
+
+        <h2>Digital Signature Practical Lab</h2>
+
+        <p>Generate RSA keys, sign a message, and verify its digital signature.</p>
+
+        <h3>Activity 1: Generate RSA Keys</h3>
+
+        <p>Generate a public and private key pair for digital signing.</p>
+
+        <button type="button" id="generateSignatureKeysBtn">
+            Generate Keys
+        </button>
+
+        <p id="signatureKeyStatus"></p>
+
+        <label>Public Key</label>
+        <textarea id="signaturePublicKey" rows="4" readonly
+            placeholder="Your public key will appear here"></textarea>
+
+        <h3>Activity 2: Sign a Message</h3>
+
+        <label>Enter Message</label>
+        <textarea id="signMessageInput" rows="3"
+            placeholder="Enter a message to sign"></textarea>
+
+        <button type="button" id="signMessageBtn">
+            Sign Message
+        </button>
+
+        <label>Digital Signature</label>
+        <textarea id="signatureOutput" rows="4" readonly
+            placeholder="Your digital signature will appear here"></textarea>
+
+        <p id="signMessageStatus"></p>
+
+        <h3>Activity 3: Verify Digital Signature</h3>
+
+        <label>Message to Verify</label>
+        <textarea id="verifySignatureMessage" rows="3"
+            placeholder="Enter the original message"></textarea>
+
+        <label>Digital Signature to Verify</label>
+        <textarea id="verifySignatureInput" rows="4"
+            placeholder="Paste the digital signature"></textarea>
+
+        <button type="button" id="verifySignatureBtn">
+            Verify Signature
+        </button>
+
+        <p id="signatureVerifyStatus"></p>
+
+    </div>
+
+</template>
+
+<template id="pkiPractical">
+    <div class="practical-box">
+
+        <h2>PKI and Digital Certificates Practical Lab</h2>
+
+        <p>
+            Learn how a Certificate Authority creates and verifies
+            a digital certificate.
+        </p>
+
+        <h3>Activity 1: Generate CA Keys</h3>
+
+        <p>
+            Generate a public and private key pair for the
+            Certificate Authority.
+        </p>
+
+        <button type="button" id="generateCAKeysBtn">
+            Generate CA Keys
+        </button>
+
+        <p id="caKeyStatus"></p>
+
+        <h3>Activity 2: Generate User Keys</h3>
+
+        <label>User Name</label>
+        <input type="text" id="pkiUserName"
+               placeholder="Enter user name">
+
+        <button type="button" id="generateUserKeysBtn">
+            Generate User Keys
+        </button>
+
+        <p id="userKeyStatus"></p>
+
+        <h3>Activity 3: Issue Digital Certificate</h3>
+
+        <p>
+            The CA signs the user's certificate using its private key.
+        </p>
+
+        <button type="button" id="issueCertificateBtn">
+            Issue Certificate
+        </button>
+
+        <p id="issueCertificateStatus"></p>
+
+        <label>Digital Certificate</label>
+        <textarea id="pkiCertificateOutput" rows="8"
+                  readonly
+                  placeholder="Your certificate will appear here"></textarea>
+
+        <h3>Activity 4: Verify Digital Certificate</h3>
+
+        <p>
+            Verify whether the certificate was signed by the CA
+            and whether its contents have been changed.
+        </p>
+
+        <button type="button" id="verifyCertificateBtn">
+            Verify Certificate
+        </button>
+
+        <button type="button" id="tamperCertificateBtn">
+            Modify Certificate
+        </button>
+
+        <p id="certificateVerifyStatus"></p>
+
+    </div>
+</template>
+
+
+
+
+        <!-- Caesar Cipher Interactive Lab -->
+        <section class="content-section caesar-lab" id="caesar-lab" hidden>
+
+            <div class="section-heading">
+                <h2>Caesar Cipher Laboratory</h2>
+
+                <p class="lab-description">
+                    Encrypt and decrypt messages using a simple alphabet shift.
+                </p>
+            </div>
+
+            <div class="cipher-container">
+
+                <div class="cipher-info">
+
+                    <h3>🔤 How does it work?</h3>
+
+                    <p>
+                        Caesar Cipher shifts each letter of a message
+                        by a selected number of positions in the alphabet.
+                    </p>
+
+                    <div class="example-box">
+                        <strong>Example</strong>
+                        <p>Plaintext: HELLO</p>
+                        <p>Shift Key: 3</p>
+                        <p>Ciphertext: KHOOR</p>
+                    </div>
+
+                </div>
+
+                <div class="cipher-tool">
+
+                    <label for="message">Enter Your Message</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Type your message here..."
+                        rows="4"></textarea>
+
+                    <label for="shift">Select Shift Key (0–25)</label>
+
+                    <input
+                        type="number"
+                        id="shift"
+                        min="0"
+                        max="25"
+                        value="3">
+
+                    <div class="cipher-buttons">
+
+                        <button id="encryptBtn" type="button">
+                            🔒 Encrypt
+                        </button>
+
+                        <button id="decryptBtn" type="button">
+                            🔓 Decrypt
+                        </button>
+
+                    </div>
+
+                    <label for="result">Output Result</label>
+
+                    <textarea
+                        id="result"
+                        rows="4"
+                        placeholder="Your result will appear here..."
+                        readonly></textarea>
+
+                    <button id="clearBtn" class="clear-button" type="button">
+                        Clear All
+                    </button>
+
+                    <p id="cipherStatus" class="cipher-status" aria-live="polite"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
